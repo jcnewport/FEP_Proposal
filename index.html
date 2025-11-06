@@ -144,6 +144,75 @@
             color: #6b7280;
             font-weight: 500;
         }
+
+        /* Video Container Styles */
+        .video-container {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Placeholder Video Styles */
+        .placeholder-video {
+            position: relative;
+            width: 100%;
+            background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .placeholder-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        /* Benefit Boxes */
+        .benefit-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid #1d4ed8;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+        
+        .benefit-box:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.1);
+        }
     </style>
 </head>
 <body class="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
@@ -585,7 +654,7 @@
                     <div class="p-6 rounded-xl shadow-lg border border-red-300 bg-red-50">
                         <div class="flex items-center mb-4">
                             <span class="text-3xl font-bold text-red-700 mr-3">Problem</span>
-                            <!-- FIXED WARNING ICON -->
+                            <!-- Clean Warning Icon -->
                             <svg class="h-8 w-8 text-red-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5h.008v.008H12V16.5z" />
@@ -668,6 +737,178 @@
                 </div>
             </section>
 
+            <!-- Example 4: Document QC Tool -->
+            <section class="mt-12">
+                <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">
+                    Example 4: Massive Folder and Nested Folders Document QC
+                </h2>
+                <p class="mt-4 text-lg text-gray-700">
+                    This was a tool we actually developed internally for ourselves and make available to others as a <strong class="font-semibold">"sanity saver."</strong> S.IS and its partners alike have no shortage of gigabytes of Excel and CSV files strewn across company servers, team folders, project copied folders, downloads, etc. that leads to a lot of time spent looking for which file should they be using.
+                </p>
+                <p class="mt-4 text-lg text-gray-700">
+                    Now any individual (granted access) can use it whenever via simple user prompts in the interface S.IS built to <strong class="font-semibold">'speak English'</strong> to the user and not code.
+                </p>
+
+                <!-- Key Benefits Grid -->
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="benefit-box">
+                        <div class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-sis-blue text-white rounded-full flex items-center justify-center font-bold mr-3">1</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Identifies All Duplicate Files</h4>
+                                <p class="mt-1 text-gray-700">Regardless of whether the file name is the same (it searches the metadata) and how big the folder is — it even searches the subfolders if you tell it to.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-box">
+                        <div class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-sis-blue text-white rounded-full flex items-center justify-center font-bold mr-3">2</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Smart Duplicate Management</h4>
+                                <p class="mt-1 text-gray-700">Provides you with a full list of the files and asks if you would like to delete the duplicates and keep the newest or oldest version only.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-box">
+                        <div class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-sis-blue text-white rounded-full flex items-center justify-center font-bold mr-3">3</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Deep Content Search</h4>
+                                <p class="mt-1 text-gray-700">Combs through not just the worksheets and cells, but it hones in on any component of any cell to find all files containing a specific word/name (such as a specific owner that only popped up in a foregone A&D evaluation).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="benefit-box">
+                        <div class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-sis-blue text-white rounded-full flex items-center justify-center font-bold mr-3">4</span>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 text-lg">Flexible File Actions</h4>
+                                <p class="mt-1 text-gray-700">Provides you a list of all the files and asks if you want to keep them, "Quarantine" them via its auto folder creation and file movement script, or delete them.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Section -->
+                <div class="mt-10">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">See It In Action</h3>
+                    <p class="text-lg text-gray-700 mb-6">
+                        This is just one of many ways we help our partners get close to our collective goal of all team members having access to the <strong class="font-semibold">Single Data Source Truth File</strong>. Check it out below for a very quick run through; be sure to note the simple Yes/No or letter-based responses you can provide as well as the summary of every file it touched, sorted, found, moved, deleted, etc.!
+                    </p>
+
+                    <div class="video-container">
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://player.vimeo.com/video/1134402759?badge=0&autopause=0&player_id=0&app_id=58479" 
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                title="FEP Proposal - Example 4 - Document QC Tool">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-gray-50 border-l-4 border-sis-blue p-4 rounded">
+                        <p class="text-sm text-gray-700">
+                            <strong class="font-semibold text-sis-dark">Implementation Note:</strong> It's largely code-based, but it can easily be run in a simple PowerShell or VS Code (which we can setup for you). It also prompts you along the way to ensure you are getting exactly what you want, from the place you want, with the changes you want.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Example 5: Custom Applications & Extensions -->
+            <section class="mt-12">
+                <h2 class="text-3xl font-bold text-sis-dark tracking-tight border-b-4 border-sis-blue pb-2">
+                    Example 5: Quick Customized Applications & Extensions
+                </h2>
+                <p class="mt-4 text-lg text-gray-700">
+                    S.IS can attentively listen to FEP's description of any process across any team members and suggest highly impactful solutions that are:
+                </p>
+
+                <!-- Three Key Benefits -->
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-200 shadow-md">
+                        <div class="flex items-center justify-center w-16 h-16 bg-sis-blue rounded-full mb-4 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-gray-900 mb-2">Quickly Built</h4>
+                        <p class="text-center text-gray-700">Rapid development cycles mean you get solutions in days, not months. We've built applications in as little as 1 day.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border-2 border-purple-200 shadow-md">
+                        <div class="flex items-center justify-center w-16 h-16 bg-purple-600 rounded-full mb-4 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-gray-900 mb-2">Tailored to Each Person</h4>
+                        <p class="text-center text-gray-700">Every solution is customized to the specific process, workflow, and preferences of the individual or team using it.</p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border-2 border-green-200 shadow-md">
+                        <div class="flex items-center justify-center w-16 h-16 bg-green-600 rounded-full mb-4 mx-auto">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-center text-gray-900 mb-2">Significant Time Savings</h4>
+                        <p class="text-center text-gray-700">Automating 'even the simple stuff' saves hours per week and greatly increases productivity across your team.</p>
+                    </div>
+                </div>
+
+                <!-- Real-World Example -->
+                <div class="mt-10 bg-gradient-to-r from-blue-900 to-indigo-900 text-white p-8 rounded-xl shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-4">Real Success Story</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        Below is just one example of an application we built in <strong class="underline">1 day</strong> that reduced a <strong class="underline">1.5 hour process</strong> with lots of download errors and missing files to the <strong class="underline">click of a button</strong> where the whole process is automated and completed between <strong class="underline">30 seconds and 2 minutes</strong> depending on size.
+                    </p>
+                    <div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/20">
+                        <p class="text-blue-100 text-base">
+                            <span class="font-semibold">Why it was a big hit:</span> We built it for them as a <strong>Chrome web browser "extension / plugin"</strong> that had a branded logo and simple interface! The entire team could use it instantly with no training required.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video Placeholder -->
+                <div class="mt-10">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Watch the Demo</h3>
+                    <p class="text-lg text-gray-700 mb-6">
+                        See how this custom Chrome extension transformed their workflow. <strong class="font-semibold">Video demonstration coming soon!</strong>
+                    </p>
+
+                    <div class="placeholder-video">
+                        <div class="placeholder-icon">
+                            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-3xl font-bold text-white mb-3">Video Demo Coming Tomorrow</h4>
+                        <p class="text-xl text-blue-100 max-w-2xl mx-auto">
+                            We're preparing a detailed walkthrough of this custom browser extension showing how automation transformed a complex, error-prone process into a one-click solution.
+                        </p>
+                        <div class="mt-6 inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
+                            <p class="text-white font-semibold">Check back soon for the full demonstration!</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+                        <div class="flex items-start">
+                            <svg class="flex-shrink-0 h-6 w-6 text-yellow-600 mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p class="text-sm text-gray-700">
+                                <strong class="font-semibold text-gray-900">Video Placeholder:</strong> This section is ready for your video embed. Once you provide the Vimeo or YouTube link tomorrow, we'll replace this placeholder with the actual demonstration video showing the Chrome extension in action.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Moving Forward -->
             <section class="mt-12">
                 <h2 class="text-2xl font-semibold text-sis-dark tracking-tight">
@@ -693,6 +934,7 @@
     </div>
 
     <!-- Carousel JavaScript -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script>
         // Carousel Configuration
         const slideImages = [
